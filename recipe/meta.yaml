@@ -1,5 +1,5 @@
 {% set name = "viser" %}
-{% set version = "1.0.4" %}
+{% set version = "1.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/viser-{{ version }}.tar.gz
-  sha256: 468903865d477af90fb572529e42fa41b2abd6753bff10dd24f29d55068f449a
+  sha256: 3bf9b0ec9994a4de6fe5957fb882d5e93232b07d9e890d93a59e047097154891
 
 build:
   noarch: python
