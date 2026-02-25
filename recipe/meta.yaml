@@ -1,5 +1,5 @@
 {% set name = "viser" %}
-{% set version = "1.0.21" %}
+{% set version = "1.0.22" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/viser-{{ version }}.tar.gz
-  sha256: b047b0b6ccc5c9b26374e1c48a514e15dbed05df351dcc2e71014f13ac651771
+  sha256: f5ce567c2dd7363eca8e98616c176cb650a84635835a7e3ed56cf95c2666d47d
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
     - viser-build-client = viser._client_autobuild:build_client_entrypoint
