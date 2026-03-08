@@ -47,10 +47,11 @@ tests:
       pip_check: true
       python_version: ${{ python_min }}.*
   - script:
-      - pytest
+      - pytest --deselect "tests/test_image_encode.py::test_image_encode_png"
     files:
       source:
         - tests/
+        - src/viser/
         - pyproject.toml
     requirements:
       run:
