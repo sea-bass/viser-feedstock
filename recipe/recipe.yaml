@@ -1,6 +1,7 @@
 schema_version: 1
 
 context:
+  name: viser
   version: 1.0.24
   build_number: 1
 
