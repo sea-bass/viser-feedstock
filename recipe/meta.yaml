@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/viser-project/viser/archive/refs/tags/v${{ version }}.zip
+  url: https://github.com/viser-project/viser/archive/refs/tags/v{{ version }}.zip
   sha256: 810d8f5854dcac5d8fc93a26792d2857927a73f06aaf316ce5f15fb2cf2b88f5
 
 build:
