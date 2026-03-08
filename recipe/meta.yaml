@@ -45,6 +45,7 @@ test:
     - tests/
     - pyproject.toml
   requires:
+    - hypothesis
     - pip
     - pytest
     - python {{ python_min }}
