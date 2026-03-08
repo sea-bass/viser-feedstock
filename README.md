@@ -3,11 +3,11 @@ About viser-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/viser-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/nerfstudio-project/viser
+Home: https://github.com/viser-project/viser
 
 Package license: Apache-2.0
 
-Summary: Web-based 3D visualization + Python
+Summary: Web-based 3D visualization in Python
 
 Current build status
 ====================
