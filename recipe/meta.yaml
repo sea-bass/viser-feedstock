@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/viser-{{ version }}.tar.gz
-  sha256: d1f52c8dccf553b1d5a8825f631344e2e91b2d5615dfac41cb81fd50035d9224
+  url: https://github.com/viser-project/viser/archive/refs/tags/v${{ version }}.zip
+  sha256: 810d8f5854dcac5d8fc93a26792d2857927a73f06aaf316ce5f15fb2cf2b88f5
 
 build:
   noarch: python
