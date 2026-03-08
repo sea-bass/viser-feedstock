@@ -50,8 +50,8 @@ test:
     - python {{ python_min }}
 
 about:
-  home: https://github.com/nerfstudio-project/viser
-  summary: Web-based 3D visualization + Python
+  home: https://github.com/viser-project/viser
+  summary: Web-based 3D visualization in Python
   license: Apache-2.0
   license_file: LICENSE
 
