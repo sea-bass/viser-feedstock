@@ -47,7 +47,9 @@ tests:
       pip_check: true
       python_version: ${{ python_min }}.*
   - script:
-      - pytest --deselect "tests/test_image_encode.py::test_image_encode_png"
+      # Browser e2e tests require Playwright-managed browsers; keep the
+      # feedstock validation to import and unit-level tests.
+      - pytest --ignore tests/e2e --deselect "tests/test_image_encode.py::test_image_encode_png"
     files:
       source:
         - tests/
