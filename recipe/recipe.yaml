@@ -10,8 +10,13 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://github.com/viser-project/viser/archive/refs/tags/v${{ version }}.zip
-  sha256: 97e17036f4b8cf8ad546f7501294e1d9243aaa7a61d7523d3727fd680efe123e
+  # PyPI sdist includes the pre-built web client. GitHub archives do not.
+  - url: https://pypi.org/packages/source/v/viser/viser-${{ version }}.tar.gz
+    sha256: 87e3239d6c1c2c003db93ac4072430ec790e336ffe7214781f035e54faebc0af
+  # Keep upstream's tests/docs without overlaying the GitHub source tree.
+  - url: https://github.com/viser-project/viser/archive/refs/tags/v${{ version }}.zip
+    sha256: 97e17036f4b8cf8ad546f7501294e1d9243aaa7a61d7523d3727fd680efe123e
+    target_directory: upstream-src
 
 build:
   noarch: python
@@ -49,12 +54,14 @@ tests:
   - script:
       # Browser e2e tests require Playwright-managed browsers; keep the
       # feedstock validation to import and unit-level tests.
-      - pytest --ignore tests/e2e --deselect "tests/test_image_encode.py::test_image_encode_png"
+      # Keep localhost HTTP checks out of proxy environments.
+      - export NO_PROXY="localhost,127.0.0.1,${NO_PROXY:-}"
+      - export no_proxy="localhost,127.0.0.1,${no_proxy:-}"
+      - pytest upstream-src/tests --ignore upstream-src/tests/e2e --deselect "upstream-src/tests/test_image_encode.py::test_image_encode_png" --deselect "upstream-src/tests/test_version_sync.py::test_versions_match"
     files:
       source:
-        - tests/
-        - src/viser/
-        - pyproject.toml
+        - upstream-src/tests/
+        - upstream-src/docs/source/api/
     requirements:
       run:
         - hypothesis
