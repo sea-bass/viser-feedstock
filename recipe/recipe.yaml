@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: viser
-  version: "1.0.26"
+  version: "1.0.27"
   build_number: 0
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://github.com/viser-project/viser/archive/refs/tags/v${{ version }}.zip
-  sha256: 2cad61ab5cbbb992a95ded13e5377d9e501c606e43a6beabc359ac42d479e34b
+  sha256: 97e17036f4b8cf8ad546f7501294e1d9243aaa7a61d7523d3727fd680efe123e
 
 build:
   noarch: python
