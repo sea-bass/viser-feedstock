@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: viser
-  version: "1.0.27"
+  version: "1.0.29"
   build_number: 0
 
 package:
@@ -12,10 +12,10 @@ package:
 source:
   # PyPI sdist includes the pre-built web client. GitHub archives do not.
   - url: https://pypi.org/packages/source/v/viser/viser-${{ version }}.tar.gz
-    sha256: 87e3239d6c1c2c003db93ac4072430ec790e336ffe7214781f035e54faebc0af
+    sha256: 6229a985720a5da3f427647f04bccfdd437c3b21aafa5d2818bcd5f73cc1ad2b
   # Keep upstream's tests/docs without overlaying the GitHub source tree.
   - url: https://github.com/viser-project/viser/archive/refs/tags/v${{ version }}.zip
-    sha256: 97e17036f4b8cf8ad546f7501294e1d9243aaa7a61d7523d3727fd680efe123e
+    sha256: 4135baa6a4e5af254bbee9edded1d114a0b9c17b5d4e907e18224fdd5da8994f
     target_directory: upstream-src
 
 build:
@@ -41,7 +41,6 @@ requirements:
     - tqdm >=4.0.0,<5.0.0
     - rich >=13.3.3,<15.0.0
     - trimesh >=3.21.7,<5.0.0
-    - yourdfpy >=0.0.53,<1.0.0
     - typing-extensions >=4.0.0
     - zstandard >=0.20.0,<1.0.0
 
