@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: viser
-  version: "1.0.29"
+  version: "1.0.30"
   build_number: 0
 
 package:
@@ -12,10 +12,10 @@ package:
 source:
   # PyPI sdist includes the pre-built web client. GitHub archives do not.
   - url: https://pypi.org/packages/source/v/viser/viser-${{ version }}.tar.gz
-    sha256: 6229a985720a5da3f427647f04bccfdd437c3b21aafa5d2818bcd5f73cc1ad2b
+    sha256: 6a849a9ef141c97d4ac7bd7d970b81265e6d0130ee8ef1c2e18c0b46aa6b6283
   # Keep upstream's tests/docs without overlaying the GitHub source tree.
   - url: https://github.com/viser-project/viser/archive/refs/tags/v${{ version }}.zip
-    sha256: 4135baa6a4e5af254bbee9edded1d114a0b9c17b5d4e907e18224fdd5da8994f
+    sha256: f3536e4a1a4d448f64264c9acbe8e83ca37865b03c68d3dfa4d32259f8c9eff9
     target_directory: upstream-src
 
 build:
